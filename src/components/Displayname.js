@@ -23,13 +23,13 @@ const Displayname = () =>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>First Name:</label>
-                    <input name="firstname" value={fullname.firstname} onChange={handleChange} required/>
+                    <input type="text" name="firstname" value={fullname.firstname} onChange={handleChange} required/>
                 </div>
                 <div>
                     <label>Last Name:</label>
-                    <input name="lastname" value={fullname.lastname} onChange={handleChange} required/>
+                    <input type="text" name="lastname" value={fullname.lastname} onChange={handleChange} required/>
                 </div>
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </form>
             {name && <p>Full Name: {name}</p>}
         </div>
