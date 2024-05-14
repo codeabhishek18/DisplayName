@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Displayname = () =>
 {
@@ -10,20 +10,11 @@ const Displayname = () =>
         setFullname({...fullname, [e.target.name]: e.target.value})
     }
 
-    useEffect(()=>
-    {
-        const fullname = JSON.parse(localStorage.getItem('Fullname'));
-        if(!fullname)
-            return;
-        setName(fullname.firstname +" " +fullname.lastname);
-    },[])
-
     const handleSubmit = (e) =>
     {
         e.preventDefault();
-        setName(fullname.firstname +" " +fullname.lastname);
-        localStorage.setItem('Fullname', JSON.stringify(fullname));
-        setFullname({firstname : '', lastname : ''})
+        const displayfullname = `${fullname.firstname} ${fullname.lastname}`
+        setName(displayfullname);
     }
 
     return(
